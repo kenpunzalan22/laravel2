@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/posts', function () {
-    return response()->json("this is the return value");
-});
+    //http://localhost:8000/api/departments
+
+    Route::get('/departments', [DepartmentController::class, 'index']);
 
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+      //  Route::get('/posts', function () {
+      // return response()->json("this is the return value");
+      //  });
+
+
+      //  Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+      // return $request->user();
+      //  });
