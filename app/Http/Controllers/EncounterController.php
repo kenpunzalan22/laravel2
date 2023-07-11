@@ -41,7 +41,7 @@ class EncounterController extends Controller
             'hospital_number' => 'required|exists:patients,hospital_number',
             'department_code' => 'required|exists:departments,code',
             'type' => 'nullable|in:R,T'
-        ]);sss
+        ]);
 
         $id = DB::table('encounters')->insertGetId([
             'hospital_number' => $request->input('hospital_number'),
